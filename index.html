@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html style="background: white">
+ <head>
+ <title>My React Configuration Setup</title>
+ </head>
+ <body>
+ <div id="root"></div>
+<script>
+let logBtn=document.createElement("div");logBtn.id="logBtn",logBtn.innerHTML="Console Logs",logBtn.setAttribute("style","position: fixed;bottom: 10px;cursor: pointer;left: 0px;width: auto;background: #3c3c3c;color: #cccccc;transition: bottom 300ms ease-in;font-size: 14px;padding: 5px;z-index: 10000;"),document.getElementsByTagName("body")[0].appendChild(logBtn);
+let logBox=document.createElement("div");logBox.setAttribute("class","logBox");let logBoxPre=document.createElement("pre");logBoxPre.setAttribute("id","log"),logBoxPre.innerHTML="Launching Logger... \n",logBox.appendChild(logBoxPre),logBox.setAttribute("style","position: fixed;overflow: auto;bottom: 0px;left: 0px;width: 100%;height: 0;background: #1c1c1c;color: #cccccc;transition: height 300ms ease-in;font-size: 14px;padding: 5px;z-index: 10000;"),document.getElementsByTagName("body")[0].appendChild(logBox);var old=console.log,logger=document.getElementById("log");console.log=function(){for(var e=0;e<arguments.length;e++)"object"==typeof arguments[e]?logger.innerHTML+=(JSON&&JSON.stringify?JSON.stringify(arguments[e],void 0,2):arguments[e])+"<br />":logger.innerHTML+=arguments[e]+"<br />"};const wrapper=document.querySelector(".logBox"),button=document.getElementById("logBtn");let open=!0;function toggleOpen(){if(open)wrapper.style.height="200px",button.style.bottom="210px",open=!1;else{const e="0";button.style.bottom="10px",wrapper.style.height=`${e}px`,open=!0}}button.addEventListener("click",toggleOpen);
+</script>
+
+ <script src="./bundle.js"></script>
+ </body>
+</html>

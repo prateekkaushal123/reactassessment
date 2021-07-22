@@ -1,0 +1,4 @@
+{
+  "testRegex": "((\\.|/test/*.)(test))\\.js?$",
+  "testTimeout": 3000
+}
